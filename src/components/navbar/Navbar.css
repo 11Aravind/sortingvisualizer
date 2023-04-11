@@ -1,0 +1,31 @@
+.nav-container{
+    display: flex;
+    /* background-color: black; */
+    /* color: white; */
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    padding: 20px 15px;
+}
+.logo-container{
+    flex: .5;
+}
+.menu-container{
+    flex: .5;
+    display: flex;
+    justify-content: space-evenly;
+}
+select{
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 4px 13px;
+    outline: none;
+}
+button{
+    background: transparent;
+    border: 1px solid #ced4da;
+    padding: 4px 13px;
+    border-radius: 4px;
+    color: #495057;
+}
