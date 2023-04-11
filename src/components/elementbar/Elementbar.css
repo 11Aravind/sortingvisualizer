@@ -1,0 +1,9 @@
+/* #40e0d0 */
+.singleBar{
+    background-color: #40e0d0;
+    padding: 4px;
+    margin: 0px 6px;
+    display: flex;
+    width: 25px;
+    color: white;
+}
