@@ -1,17 +1,62 @@
 import './Navbar.css'
 import Canvase from '../Canvase/Canvase'
+import { useEffect, useState } from 'react';
 export default function Navbar() {
-  const randomArray = [];
-  for (let i = 0; i < 15; i++)
-    randomArray.push(Math.floor(Math.random() * (600 - 100)) + 100);
-  const refreshPage = () => {
-    window.location.reload(false);
-  }
+
+ const[randomArray,handleArray]=useState([]);
+
+const generateArray=()=>{
+  let temp=[];
+  handleArray([]);
+  for(let i = 0; i < 15; i++)
+  temp.push(Math.floor(Math.random() * (600 - 100)) + 100);
+  handleArray(temp);
+}
+function refreshPage() {
+  window.location.reload(false); 
+}
+
+  useEffect(()=>{
+    generateArray();
+    console.log("use effect")
+  },[])
+  
+  
+const swap=(first,second)=>{
+  if (first > second) {
+            const temp = first;
+            first = second;
+            second = temp;
+            // setTimeout(() => {
+            //   handleArray(arr);
+            // }, (1 * len + 1)*50 );
+          }
+}
+
+  const bubbleSort = () => {
+    const arr = [...randomArray];
+    const len = arr.length;
+    for (let i = 0; i < len - 1; i++) {
+      for (let j = 0; j < len - i - 1; j++) {
+        if (arr[j] > arr[j + 1]) {
+          const temp = arr[j];
+          arr[j] = arr[j + 1];
+          arr[j + 1] = temp;
+           setTimeout(() => {
+              handleArray(arr);
+            }, (1 * len + 1)*50 );
+        }
+          
+          
+      }
+    }
+  };
+
+
   return (
     <>
-
       <div className="nav-container">
-        <div className="logo-container">Navbar</div>
+        <div className="logo-container">SortingVisualizer</div>
         <div className="menu-container">
           <div className="selection-box">
             <select name="" id="">
@@ -27,7 +72,7 @@ export default function Navbar() {
             <button className="new-array" onClick={refreshPage}>New Array</button>
           </div>
           <div className="run-btn">
-            <button className="runBtn">run</button>
+            <button className="runBtn" onClick={bubbleSort}>run</button>
           </div>
         </div>
       </div>

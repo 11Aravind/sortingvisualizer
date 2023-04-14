@@ -5,8 +5,10 @@ export default function Canvase({ randomArray }) {
   return (
     <div className='canvaseContainer'>
 
-      {randomArray.map((singleElement, key) => (
-        <Elementbar key={key} element={singleElement} />
+      {randomArray.map((singleElement,index) => (
+ 
+        <div className='singleBar' key={index}style={{'height':`${singleElement/2}px`}} >{singleElement}</div>
+        // <Elementbar key={index} element={singleElement} />
       ))
       }
 

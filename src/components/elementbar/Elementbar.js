@@ -1,9 +1,9 @@
 import './Elementbar.css'
 
 export default function Elementbar({element,key}) {
-    let h=element*1;
+    let h=element/2;
    
   return (
-<div className='singleBar' style={{'height':`${h}px`}} key={key}>{element}</div>
+<div className='singleBar' style={{'height':`${h}px`}} >{element}</div>
   )
 }
