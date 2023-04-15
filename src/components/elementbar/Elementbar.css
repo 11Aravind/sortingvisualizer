@@ -6,4 +6,5 @@
     display: flex;
     width: 25px;
     color: white;
+    /* transition: all 3s ease-in-out; */
 }
